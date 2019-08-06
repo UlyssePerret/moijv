@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block nav %}
+    Pas d'acceuil
+{% endblock %}
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Bienvenue sur MoiJV !</h1>
+    <p>
+        MoiJV est un site collaborative de prêt vidéos.
+    </p>
+    <h2> Nos produits</h2>
+    <ul>
+        {%  for product in products %}
+            <li>
+                <a href="{{  path('product', { 'id' : product.id}) }}">
+                {{ product.name }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}

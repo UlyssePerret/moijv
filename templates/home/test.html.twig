@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h1>Bienvenue sur MoiJV !</h1>
+        <p>
+            MoiJV est un site collaborative de prêt vidéos.
+        </p>
+        <h2> Nos produits</h2>
+        <table>
+            <thead>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Logo</th>
+                <th>Date Création</th>
+            </thead>
+            {%  for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td> <img src="{{product.image}}" alt="{{ product.name }}" width="100%"></td>
+                    {# <td>{{ product.creation_date }} </td> #}
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}
